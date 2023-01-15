@@ -1,4 +1,3 @@
-import { User } from "./../entity/User";
 import "reflect-metadata";
 import { DataSource } from "typeorm";
 
@@ -11,7 +10,8 @@ export const AppDataSource = new DataSource({
   database: "nabin_ecommerce",
   synchronize: true,
   logging: false,
-  entities: [User],
+  // entities: [UserName, Post],
+  entities: [`${__dirname}/../entity/**/*.{ts,js}`],
   migrations: [],
   subscribers: [],
 });
